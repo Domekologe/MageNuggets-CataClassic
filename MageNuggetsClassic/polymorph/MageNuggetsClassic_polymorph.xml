@@ -1,0 +1,98 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Script file="MageNuggetsClassic_polymorph.lua"></Script>
+
+  <Frame name="MageNugPolyFrame" parent="UIParent" hidden="true" enableMouse="true" movable="true">
+    <Size x="140" y="30"/>
+    <Anchors>
+      <Anchor point="CENTER"/>
+    </Anchors>
+
+    <Layers>
+      <Layer level="OVERLAY">
+        <Texture name="$parentTextureBorder" file="Interface\UNITPOWERBARALT\MetalEternium_Horizontal_Frame">
+          <Size>
+            <AbsDimension x="188" y="69"/>
+          </Size>
+          <Anchors>
+            <Anchor point="CENTER">
+              <Offset>
+                <AbsDimension x="0" y="0"/>
+              </Offset>
+            </Anchor>
+          </Anchors>
+        </Texture>
+      </Layer>
+      <Layer level="ARTWORK">
+        <Texture name="$parentTexture" file="Interface\Icons\Spell_magic_polymorphrabbit">
+          <Size>
+            <AbsDimension x="23" y="23"/>
+          </Size>
+          <Anchors>
+            <Anchor point="LEFT">
+              <Offset>
+                <AbsDimension x="4" y="0"/>
+              </Offset>
+            </Anchor>
+          </Anchors>
+        </Texture>
+        <FontString name="$parentText" font="Fonts\FRIZQT__.TTF" inherits="GameFontNormal">
+          <Anchors>
+            <Anchor point="CENTER">
+              <Offset>
+                <AbsDimension x="10" y="2"/>
+              </Offset>
+            </Anchor>
+          </Anchors>
+          <FontHeight>
+            <AbsValue val="8"/>
+          </FontHeight>
+        </FontString>
+        <FontString name="$parentTimerText" font="Fonts\FRIZQT__.TTF" inherits="GameFontNormal">
+          <Anchors>
+            <Anchor point="TOPRIGHT">
+              <Offset>
+                <AbsDimension x="-5" y="-3"/>
+              </Offset>
+            </Anchor>
+          </Anchors>
+          <FontHeight>
+            <AbsValue val="9"/>
+          </FontHeight>
+        </FontString>
+      </Layer>
+    </Layers>
+    <Frames>
+      <StatusBar name="$parent_Bar" inherits="TextStatusBar">
+        <Size x="110" y="4"/>
+        <Anchors>
+          <Anchor point="BOTTOMLEFT" relativeTo="$parent">
+            <Offset>
+              <AbsDimension x="27" y="2"/>
+            </Offset>
+          </Anchor>
+        </Anchors>
+        <BarTexture file="Interface\TargetingFrame\UI-StatusBar"/>
+        <Layers></Layers>
+        <Scripts>
+          <OnLoad>
+            self:SetStatusBarColor(1, 0, 0) self:SetMinMaxValues(0,50)
+          </OnLoad>
+        </Scripts>
+      </StatusBar>
+    </Frames>
+    <Scripts>
+      <OnLoad>
+        self:RegisterForDrag("LeftButton"); self.TimeSinceLastUpdate = 0
+      </OnLoad>
+      <OnDragStart>
+        MNLockFrames(self);</OnDragStart>
+      <OnDragStop>
+        self:StopMovingOrSizing(); self.isMoving = false; MageNuggetsClassic_Frames.poly_point, _, MageNuggetsClassic_Frames.poly_relativePoint, MageNuggetsClassic_Frames.poly_xOfs, MageNuggetsClassic_Frames.poly_yOfs = MageNugPolyFrame:GetPoint();
+      </OnDragStop>
+      <OnUpdate>
+        MageNuggetsClassicPoly_OnUpdate(self, elapsed)
+      </OnUpdate>
+    </Scripts>
+  </Frame>
+
+</Ui>

@@ -1,0 +1,23 @@
+## Interface: 40400
+## X-Min-Interface: 40400
+## Title: Mage Nuggets Classic
+## Author: B-Buck (Bbuck - Eredar), Domekologe
+## Version: 4.4.0
+## Notes: Mage Nuggets Classic is a mage utility with many useful nuggets to make the lives of mages easier.
+## DefaultState: Enabled
+## LoadOnDemand: 0
+## SavedVariablesPerCharacter: MageNuggetsClassic,MageNuggetsClassic_Frames
+
+mnoptions.xml
+MageNuggetsClassic.xml
+
+arcane\MageNuggetsClassic_arcane.xml
+fire\MageNuggetsClassic_fire.xml
+frost\MageNuggetsClassic_frost.xml
+
+portals\MageNuggetsClassic_horde_portals.xml
+portals\MageNuggetsClassic_alliance_portals.xml
+
+polymorph\MageNuggetsClassic_polymorph.xml
+
+moonkin\MageNuggetsClassic_moonkin.xml

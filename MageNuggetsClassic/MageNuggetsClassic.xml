@@ -1,0 +1,495 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Script file="MageNuggetsClassic.lua"></Script>
+
+  <Frame name="MageNuggetsClassic">
+    <Scripts>
+      <OnLoad>
+        self.TimeSinceLastUpdate = 0 MageNuggetsClassic_OnStart(self);
+      </OnLoad>
+      <OnUpdate>
+        MageNuggetsClassic_OnUpdate(self, elapsed)
+      </OnUpdate>
+      <OnEvent>
+        MageNuggetsClassic_OnEvent(self, event, ...);
+      </OnEvent>
+    </Scripts>
+  </Frame>
+
+  <Frame name="MageNugInfo_Frame" parent="UIParent" hidden="false" enableMouse="false" movable="false">
+    <Size x="300" y="100"/>
+    <Anchors>
+      <Anchor point="CENTER"/>
+    </Anchors>
+    <Layers>
+      <Layer level="ARTWORK">
+        <FontString name="$parentText" font="Fonts\MORPHEUS.ttf" outline="THICK" inherits="GameFontNormal">
+          <FontHeight>
+            <AbsValue val="38"/>
+          </FontHeight>
+        </FontString>
+      </Layer>
+    </Layers>
+    <Frames></Frames>
+    <Scripts>
+      <OnLoad>
+        self.TimeSinceLastUpdate = 0;
+      </OnLoad>
+      <OnUpdate>
+        -- MageNuggetsClassicInfo_OnUpdate(self, elapsed)
+      </OnUpdate>
+    </Scripts>
+  </Frame>
+
+
+  <Frame name="MageNugCauterizeFrame" parent="UIParent" hidden="true" enableMouse="true" movable="true">
+    <Size x="220" y="40"/>
+    <Anchors>
+      <Anchor point="CENTER"/>
+    </Anchors>
+    <Layers>
+      <Layer level="OVERLAY">
+        <Texture name="$parentTextureBorder" file="Interface\UNITPOWERBARALT\Fire_Horizontal_Frame">
+          <Size>
+            <AbsDimension x="300" y="90"/>
+          </Size>
+          <Anchors>
+            <Anchor point="CENTER">
+              <Offset>
+                <AbsDimension x="0" y="0"/>
+              </Offset>
+            </Anchor>
+          </Anchors>
+        </Texture>
+      </Layer>
+      <Layer level="ARTWORK">
+        <Texture name="$parentTexture" file="Interface\Icons\spell_fire_rune">
+          <Size>
+            <AbsDimension x="36" y="36"/>
+          </Size>
+          <Anchors>
+            <Anchor point="LEFT">
+              <Offset>
+                <AbsDimension x="0" y="0"/>
+              </Offset>
+            </Anchor>
+          </Anchors>
+        </Texture>
+        <Texture name="$parentTexture" file="Interface\Icons\spell_fire_rune">
+          <Size>
+            <AbsDimension x="36" y="36"/>
+          </Size>
+          <Anchors>
+            <Anchor point="RIGHT">
+              <Offset>
+                <AbsDimension x="0" y="0"/>
+              </Offset>
+            </Anchor>
+          </Anchors>
+        </Texture>
+        <FontString name="$parentText" font="Fonts\FRIZQT__.TTF" inherits="GameFontNormal" text="CAUTERIZE:">
+          <Anchors>
+            <Anchor point="CENTER">
+              <Offset>
+                <AbsDimension x="0" y="6"/>
+              </Offset>
+            </Anchor>
+          </Anchors>
+          <FontHeight>
+            <AbsValue val="13"/>
+          </FontHeight>
+          <color r="1" g="0" b="0"/>
+        </FontString>
+        <FontString name="$parentText" font="Fonts\FRIZQT__.TTF" inherits="GameFontNormal" text="extinguish yourself!">
+          <Anchors>
+            <Anchor point="CENTER">
+              <Offset>
+                <AbsDimension x="0" y="-9"/>
+              </Offset>
+            </Anchor>
+          </Anchors>
+          <FontHeight>
+            <AbsValue val="13"/>
+          </FontHeight>
+          <color r="1" g="0" b="0"/>
+        </FontString>
+      </Layer>
+    </Layers>
+    <Frames></Frames>
+    <Scripts>
+      <OnLoad>
+        self:RegisterForDrag("LeftButton"); self.TimeSinceLastUpdate = 0 -- MageNugCauterizeFrame:SetScale(1.5);
+      </OnLoad>
+      <OnDragStart>
+        MNLockFrames(self);</OnDragStart>
+      <OnDragStop>
+        self:StopMovingOrSizing(); self.isMoving = false; MageNuggetsClassic_Frames.caut_point, _, MageNuggetsClassic_Frames.caut_relativePoint, MageNuggetsClassic_Frames.caut_xOfs, MageNuggetsClassic_Frames.caut_yOfs = MageNugCauterizeFrame:GetPoint();
+      </OnDragStop>
+      <OnEnter>
+        Monitors_OnEnter()
+      </OnEnter>
+      <OnLeave>
+        GameTooltip:Hide()
+      </OnLeave>
+      <OnUpdate>
+        --MageNuggetsClassicBF_OnUpdate(self, elapsed)
+      </OnUpdate>
+    </Scripts>
+  </Frame>
+
+
+  <Frame name="MNSpellSteal_Frame" parent="UIParent" hidden="true" enableMouse="true" movable="true">
+    <Size x="150" y="70"/>
+    <Anchors>
+      <Anchor point="CENTER"/>
+    </Anchors>
+    <Layers>
+      <Layer level="OVERLAY">
+        <Texture name="$parentTextureBorder" file="Interface\GMChatFrame\UI-GMStatusFrame-Pulse">
+          <Size>
+            <AbsDimension x="180" y="131"/>
+          </Size>
+          <Anchors>
+            <Anchor point="CENTER">
+              <Offset>
+                <AbsDimension x="0" y="0"/>
+              </Offset>
+            </Anchor>
+          </Anchors>
+        </Texture>
+      </Layer>
+      <Layer level="ARTWORK">
+        <FontString name="$parentTitleText" font="Fonts\FRIZQT__.TTF" outline="THICK" inherits="GameFontNormal" text="S P E L L S T E A L">
+          <Anchors>
+            <Anchor point="TOP" relativeTo="$parent">
+              <Offset><AbsDimension x="0" y="-5"/></Offset>
+            </Anchor>
+          </Anchors>
+          <FontHeight>
+            <AbsValue val="10"/>
+          </FontHeight>
+        </FontString>
+        <FontString name="$parentBuffText" font="Fonts\FRIZQT__.TTF" inherits="GameFontNormal">
+          <Anchors>
+            <Anchor point="TOP" relativeTo="$parentTitleText">
+              <Offset><AbsDimension x="0" y="-15"/></Offset>
+            </Anchor>
+          </Anchors>
+          <FontHeight>
+            <AbsValue val="9"/>
+          </FontHeight>
+        </FontString>
+      </Layer>
+    </Layers>
+    <Frames></Frames>
+    <Scripts>
+      <OnLoad>
+        self:RegisterForDrag("LeftButton");
+      </OnLoad>
+      <OnDragStart>
+        MNLockFrames(self);</OnDragStart>
+      <OnDragStop>
+        self:StopMovingOrSizing(); self.isMoving = false; MageNuggetsClassic_Frames.spellsteal_point, _, MageNuggetsClassic_Frames.spellsteal_relativePoint, MageNuggetsClassic_Frames.spellsteal_xOfs, MageNuggetsClassic_Frames.spellsteal_yOfs = MNSpellSteal_Frame:GetPoint();
+      </OnDragStop>
+      <OnEnter>
+        Monitors_OnEnter()
+      </OnEnter>
+      <OnLeave>
+        GameTooltip:Hide()
+      </OnLeave>
+    </Scripts>
+  </Frame>
+
+
+  <Frame name="MNSpellStealFocus_Frame" parent="UIParent" hidden="true" enableMouse="true" movable="true">
+    <Size x="150" y="50"/>
+    <Anchors>
+      <Anchor point="CENTER"/>
+    </Anchors>
+    <Layers>
+      <Layer level="OVERLAY">
+        <Texture name="$parentTextureBorder" file="Interface\GMChatFrame\UI-GMStatusFrame-Pulse">
+          <Size>
+            <AbsDimension x="180" y="100"/>
+          </Size>
+          <Anchors>
+            <Anchor point="CENTER">
+              <Offset>
+                <AbsDimension x="0" y="0"/>
+              </Offset>
+            </Anchor>
+          </Anchors>
+        </Texture>
+      </Layer>
+      <Layer level="ARTWORK">
+        <FontString name="$parentTitleText" font="Fonts\FRIZQT__.TTF" outline="THICK" inherits="GameFontNormal" text="FOCUS SPELLSTEAL">
+          <Anchors>
+            <Anchor point="TOP" relativeTo="$parent">
+              <Offset><AbsDimension x="0" y="-5"/></Offset>
+            </Anchor>
+          </Anchors>
+          <FontHeight>
+            <AbsValue val="10"/>
+          </FontHeight>
+        </FontString>
+        <FontString name="$parentBuffText" font="Fonts\FRIZQT__.TTF" inherits="GameFontNormal">
+          <Anchors>
+            <Anchor point="TOP" relativeTo="$parentTitleText">
+              <Offset><AbsDimension x="0" y="-15"/></Offset>
+            </Anchor>
+          </Anchors>
+          <FontHeight>
+            <AbsValue val="9"/>
+          </FontHeight>
+        </FontString>
+      </Layer>
+    </Layers>
+    <Frames></Frames>
+    <Scripts>
+      <OnLoad>
+        self:RegisterForDrag("LeftButton");
+      </OnLoad>
+      <OnDragStart>
+        MNLockFrames(self);</OnDragStart>
+      <OnDragStop>
+        self:StopMovingOrSizing(); self.isMoving = false; MageNuggetsClassic_Frames.spellstealfocus_point, _, MageNuggetsClassic_Frames.spellstealfocus_relativePoint, MageNuggetsClassic_Frames.spellstealfocus_xOfs, MageNuggetsClassic_Frames.spellstealfocus_yOfs =
+        MNSpellStealFocus_Frame:GetPoint();
+      </OnDragStop>
+      <OnEnter>
+        Monitors_OnEnter()
+      </OnEnter>
+      <OnLeave>
+        GameTooltip:Hide()
+      </OnLeave>
+    </Scripts>
+  </Frame>
+
+
+  <Frame name="MageNugCauterize_Frame" parent="UIParent" hidden="true" enableMouse="true" movable="true">
+    <Size x="120" y="30"/>
+    <Anchors>
+      <Anchor point="CENTER"/>
+    </Anchors>
+    <Layers>
+      <Layer level="BACKGROUND">
+        <Texture name="$parentTexture1" file="Interface\Icons\spell_fire_rune">
+          <Size>
+            <AbsDimension x="15" y="15"/>
+          </Size>
+          <Anchors>
+            <Anchor point="BOTTOMLEFT">
+              <Offset>
+                <AbsDimension x="0" y="0"/>
+              </Offset>
+            </Anchor>
+          </Anchors>
+        </Texture>
+      </Layer>
+      <Layer level="ARTWORK">
+        <FontString name="$parent_Text" font="Fonts\FRIZQT__.TTF" inherits="GameFontNormal" text="Cauterize">
+          <Anchors>
+            <Anchor point="CENTER" relativeTo="$parent">
+              <Offset>
+                <AbsDimension x="0" y="-7"/>
+              </Offset>
+            </Anchor>
+          </Anchors>
+          <FontHeight>
+            <AbsValue val="10"/>
+          </FontHeight>
+        </FontString>
+        <FontString name="$parent_Text1" font="Fonts\FRIZQT__.TTF" inherits="GameFontNormal">
+          <Anchors>
+            <Anchor point="RIGHT" relativeTo="$parent">
+              <Offset>
+                <AbsDimension x="-2" y="-7"/>
+              </Offset>
+            </Anchor>
+          </Anchors>
+          <FontHeight>
+            <AbsValue val="10"/>
+          </FontHeight>
+        </FontString>
+      </Layer>
+    </Layers>
+    <Frames>
+      <StatusBar name="$parent_Bar" inherits="TextStatusBar" frameStrata="LOW">
+        <Size x="105" y="15"/>
+        <Anchors>
+          <Anchor point="LEFT" relativeTo="$parentTexture1">
+            <Offset>
+              <AbsDimension x="15" y="0"/>
+            </Offset>
+          </Anchor>
+        </Anchors>
+        <BarTexture file="Interface\TargetingFrame\UI-StatusBar"/>
+        <Scripts>
+          <OnLoad>
+            self:SetStatusBarColor(1, 0, 0) self:SetMinMaxValues(0,120)
+          </OnLoad>
+        </Scripts>
+      </StatusBar>
+    </Frames>
+    <Scripts>
+      <OnLoad>
+        self:RegisterForDrag("LeftButton"); self.TimeSinceLastUpdate = 0
+      </OnLoad>
+      <OnDragStart>
+        MNLockFrames(self);</OnDragStart>
+      <OnDragStop>
+        self:StopMovingOrSizing(); self.isMoving = false; MageNuggetsClassic_Frames.cautTimer_point, _, MageNuggetsClassic_Frames.cautTimer_relativePoint, MageNuggetsClassic_Frames.cautTimer_xOfs, MageNuggetsClassic_Frames.cautTimer_yOfs = MageNugCauterize_Frame:GetPoint();
+      </OnDragStop>
+      <OnUpdate>
+        MageNuggetsClassicCauterize_OnUpdate(self, elapsed)
+      </OnUpdate>
+    </Scripts>
+  </Frame>
+
+
+  <Frame name="MageNugMI_Frame" parent="UIParent" hidden="true" enableMouse="true" movable="true">
+    <Size x="120" y="30"/>
+    <Anchors>
+      <Anchor point="CENTER"/>
+    </Anchors>
+    <Layers>
+      <Layer level="BACKGROUND">
+        <Texture name="$parentTexture1" file="Interface\Icons\spell_magic_lesserinvisibilty">
+          <Size>
+            <AbsDimension x="15" y="15"/>
+          </Size>
+          <Anchors>
+            <Anchor point="BOTTOMLEFT">
+              <Offset>
+                <AbsDimension x="0" y="0"/>
+              </Offset>
+            </Anchor>
+          </Anchors>
+        </Texture>
+      </Layer>
+      <Layer level="ARTWORK">
+        <FontString name="$parent_MIText" font="Fonts\FRIZQT__.TTF" inherits="GameFontNormal" text="Mirror Images">
+          <Anchors>
+            <Anchor point="CENTER" relativeTo="$parent">
+              <Offset>
+                <AbsDimension x="0" y="-7"/>
+              </Offset>
+            </Anchor>
+          </Anchors>
+          <FontHeight>
+            <AbsValue val="10"/>
+          </FontHeight>
+        </FontString>
+        <FontString name="$parent_MIText1" font="Fonts\FRIZQT__.TTF" inherits="GameFontNormal">
+          <Anchors>
+            <Anchor point="RIGHT" relativeTo="$parent">
+              <Offset>
+                <AbsDimension x="-2" y="-7"/>
+              </Offset>
+            </Anchor>
+          </Anchors>
+          <FontHeight>
+            <AbsValue val="10"/>
+          </FontHeight>
+        </FontString>
+      </Layer>
+    </Layers>
+    <Frames>
+      <StatusBar name="$parent_MiBar" inherits="TextStatusBar" frameStrata="LOW">
+        <Size x="105" y="15"/>
+        <Anchors>
+          <Anchor point="LEFT" relativeTo="$parentTexture1">
+            <Offset>
+              <AbsDimension x="15" y="0"/>
+            </Offset>
+          </Anchor>
+        </Anchors>
+        <BarTexture file="Interface\TargetingFrame\UI-StatusBar"/>
+        <Scripts>
+          <OnLoad>
+            self:SetStatusBarColor(0, 0, 1) self:SetMinMaxValues(0,40)
+          </OnLoad>
+        </Scripts>
+      </StatusBar>
+    </Frames>
+    <Scripts>
+      <OnLoad>
+        self:RegisterForDrag("LeftButton"); self.TimeSinceLastUpdate = 0
+      </OnLoad>
+      <OnDragStart>
+        MNLockFrames(self);</OnDragStart>
+      <OnDragStop>
+        self:StopMovingOrSizing(); self.isMoving = false; MageNuggetsClassic_Frames.mi_point, _, MageNuggetsClassic_Frames.mi_relativePoint, MageNuggetsClassic_Frames.mi_xOfs, MageNuggetsClassic_Frames.mi_yOfs = MageNugMI_Frame:GetPoint();
+      </OnDragStop>
+      <OnUpdate>
+        MageNuggetsClassicMI_OnUpdate(self, elapsed)
+      </OnUpdate>
+    </Scripts>
+  </Frame>
+
+
+  <Frame name="MageNugCombatText_Frame" parent="UIParent" hidden="false">
+    <Size x="1" y="1"/>
+    <Anchors>
+      <Anchor point="CENTER"/>
+    </Anchors>
+    <Layers>
+      <Layer level="ARTWORK">
+        <FontString name="$parent_Text" font="Fonts\FRIZQT__.TTF" outline="NORMAL" inherits="GameFontNormal">
+          <Anchors>
+            <Anchor point="CENTER" relativePoint="CENTER">
+              <Offset>
+                <AbsDimension x="2" y="-8"/>
+              </Offset>
+            </Anchor>
+          </Anchors>
+          <FontHeight>
+            <AbsValue val="24"/>
+          </FontHeight>
+          <color r="1" g="1" b="1"/>
+        </FontString>
+      </Layer>
+    </Layers>
+    <Frames></Frames>
+    <Scripts>
+      <OnLoad>
+        MageNugCombatText_Frame:EnableMouse(0); self.TimeSinceLastUpdate = 0;
+      </OnLoad>
+      <OnUpdate>
+        MageNuggetsClassicCombatText_OnUpdate(self, elapsed)
+      </OnUpdate>
+    </Scripts>
+  </Frame>
+
+  <Frame name="MageNugStickyCombatText_Frame" parent="UIParent" hidden="false">
+    <Size x="1" y="1"/>
+    <Anchors>
+      <Anchor point="CENTER"/>
+    </Anchors>
+    <Layers>
+      <Layer level="ARTWORK">
+        <FontString name="$parent_Text" font="Fonts\FRIZQT__.TTF" outline="THICK" inherits="GameFontNormal">
+          <Anchors>
+            <Anchor point="CENTER" relativePoint="CENTER">
+              <Offset>
+                <AbsDimension x="2" y="24"/>
+              </Offset>
+            </Anchor>
+          </Anchors>
+          <FontHeight>
+            <AbsValue val="32"/>
+          </FontHeight>
+          <color r="1" g="1" b="1"/>
+        </FontString>
+      </Layer>
+    </Layers>
+    <Frames></Frames>
+    <Scripts>
+      <OnLoad>
+        MageNugCombatText_Frame:EnableMouse(0); self.TimeSinceLastUpdate = 0;
+      </OnLoad>
+      <OnUpdate>
+        MageNuggetsClassicStickyCombatText_OnUpdate(self, elapsed)
+      </OnUpdate>
+    </Scripts>
+  </Frame>
+
+</Ui>

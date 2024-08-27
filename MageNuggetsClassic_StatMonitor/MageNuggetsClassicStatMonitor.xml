@@ -1,0 +1,1050 @@
+﻿<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<Script file="MageNuggetsClassicStatMonitor.lua" ></Script>
+
+<Frame name="MageNugSP_Frame" parent="UIParent" frameStrata="BACKGROUND" hidden="true" enableMouse="true" movable="true" inherits="BackdropTemplate">
+    <Size x="69" y="98" />
+    <Anchors>
+        <Anchor point="CENTER" />
+    </Anchors>
+    <Layers>
+        <Layer level="ARTWORK">
+            <FontString name="$parentText1" wordwrap="true" font="Fonts\ARIALN.TTF" inherits="GameFontNormal" text="">
+                 <Anchors>
+                    <Anchor point="TOPLEFT" relativeTo="$parent">
+                        <Offset>
+                            <AbsDimension x="5" y="-5"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <FontHeight>
+                   <AbsValue val="9"/>
+                </FontHeight>
+            </FontString>
+            <FontString name="$parentValueText1" wordwrap="true" font="Fonts\ARIALN.TTF" inherits="GameFontNormal" text="">
+                 <Anchors>
+                    <Anchor point="TOPRIGHT" relativeTo="$parent">
+                        <Offset>
+                            <AbsDimension x="-5" y="-5"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <FontHeight>
+                   <AbsValue val="9"/>
+                </FontHeight>
+            </FontString>
+            <FontString name="$parentText2" wordwrap="true" font="Fonts\ARIALN.TTF" inherits="GameFontNormal" text="">
+                 <Anchors>
+                    <Anchor point="TOPLEFT" relativeTo="$parent">
+                        <Offset>
+                            <AbsDimension x="5" y="-15"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <FontHeight>
+                   <AbsValue val="9"/>
+                </FontHeight>
+            </FontString>
+            <FontString name="$parentValueText2" wordwrap="true" font="Fonts\ARIALN.TTF" inherits="GameFontNormal" text="">
+                 <Anchors>
+                    <Anchor point="TOPRIGHT" relativeTo="$parent">
+                        <Offset>
+                            <AbsDimension x="-5" y="-15"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <FontHeight>
+                   <AbsValue val="9"/>
+                </FontHeight>
+            </FontString>
+             <FontString name="$parentText3" wordwrap="true" font="Fonts\ARIALN.TTF" inherits="GameFontNormal" text="">
+                 <Anchors>
+                    <Anchor point="TOPLEFT" relativeTo="$parent">
+                        <Offset>
+                            <AbsDimension x="5" y="-25"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <FontHeight>
+                   <AbsValue val="9"/>
+                </FontHeight>
+            </FontString>
+            <FontString name="$parentValueText3" wordwrap="true" font="Fonts\ARIALN.TTF" inherits="GameFontNormal" text="">
+                 <Anchors>
+                    <Anchor point="TOPRIGHT" relativeTo="$parent">
+                        <Offset>
+                            <AbsDimension x="-5" y="-25"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <FontHeight>
+                   <AbsValue val="9"/>
+                </FontHeight>
+            </FontString>
+            <FontString name="$parentText4" wordwrap="true" font="Fonts\ARIALN.TTF" inherits="GameFontNormal" text="">
+                 <Anchors>
+                    <Anchor point="TOPLEFT" relativeTo="$parent">
+                        <Offset>
+                            <AbsDimension x="5" y="-35"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <FontHeight>
+                   <AbsValue val="9"/>
+                </FontHeight>
+            </FontString>
+            <FontString name="$parentValueText4" wordwrap="true" font="Fonts\ARIALN.TTF" inherits="GameFontNormal" text="">
+                 <Anchors>
+                    <Anchor point="TOPRIGHT" relativeTo="$parent">
+                        <Offset>
+                            <AbsDimension x="-5" y="-35"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <FontHeight>
+                   <AbsValue val="9"/>
+                </FontHeight>
+            </FontString>
+
+            <FontString name="$parentText5" wordwrap="true" font="Fonts\ARIALN.TTF" inherits="GameFontNormal" text="">
+                 <Anchors>
+                    <Anchor point="TOPLEFT" relativeTo="$parent">
+                        <Offset>
+                            <AbsDimension x="5" y="-45"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <FontHeight>
+                   <AbsValue val="9"/>
+                </FontHeight>
+            </FontString>
+            <FontString name="$parentValueText5" wordwrap="true" font="Fonts\ARIALN.TTF" inherits="GameFontNormal" text="">
+                 <Anchors>
+                    <Anchor point="TOPRIGHT" relativeTo="$parent">
+                        <Offset>
+                            <AbsDimension x="-5" y="-45"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <FontHeight>
+                   <AbsValue val="9"/>
+                </FontHeight>
+            </FontString>
+            <FontString name="$parentText6" wordwrap="true" font="Fonts\ARIALN.TTF" inherits="GameFontNormal" text="">
+                 <Anchors>
+                    <Anchor point="TOPLEFT" relativeTo="$parent">
+                        <Offset>
+                            <AbsDimension x="5" y="-55"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <FontHeight>
+                   <AbsValue val="9"/>
+                </FontHeight>
+            </FontString>
+            <FontString name="$parentValueText6" wordwrap="true" font="Fonts\ARIALN.TTF" inherits="GameFontNormal" text="">
+                 <Anchors>
+                    <Anchor point="TOPRIGHT" relativeTo="$parent">
+                        <Offset>
+                            <AbsDimension x="-5" y="-55"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <FontHeight>
+                   <AbsValue val="9"/>
+                </FontHeight>
+            </FontString>
+            <FontString name="$parentText7" wordwrap="true" font="Fonts\ARIALN.TTF" inherits="GameFontNormal" text="">
+                 <Anchors>
+                    <Anchor point="TOPLEFT" relativeTo="$parent">
+                        <Offset>
+                            <AbsDimension x="5" y="-65"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <FontHeight>
+                   <AbsValue val="9"/>
+                </FontHeight>
+            </FontString>
+            <FontString name="$parentValueText7" wordwrap="true" font="Fonts\ARIALN.TTF" inherits="GameFontNormal" text="">
+                 <Anchors>
+                    <Anchor point="TOPRIGHT" relativeTo="$parent">
+                        <Offset>
+                            <AbsDimension x="-5" y="-65"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <FontHeight>
+                   <AbsValue val="9"/>
+                </FontHeight>
+            </FontString>
+             <FontString name="$parentText8" wordwrap="true" font="Fonts\ARIALN.TTF" inherits="GameFontNormal" text="">
+                 <Anchors>
+                    <Anchor point="TOPLEFT" relativeTo="$parent">
+                        <Offset>
+                            <AbsDimension x="5" y="-75"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <FontHeight>
+                   <AbsValue val="9"/>
+                </FontHeight>
+            </FontString>
+            <FontString name="$parentValueText8" wordwrap="true" font="Fonts\ARIALN.TTF" inherits="GameFontNormal" text="">
+                 <Anchors>
+                    <Anchor point="TOPRIGHT" relativeTo="$parent">
+                        <Offset>
+                            <AbsDimension x="-5" y="-75"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <FontHeight>
+                   <AbsValue val="9"/>
+                </FontHeight>
+            </FontString>
+            <FontString name="$parentText9" wordwrap="true" font="Fonts\ARIALN.TTF" inherits="GameFontNormal" text="">
+                 <Anchors>
+                    <Anchor point="TOPLEFT" relativeTo="$parent">
+                        <Offset>
+                            <AbsDimension x="5" y="-85"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <FontHeight>
+                   <AbsValue val="9"/>
+                </FontHeight>
+            </FontString>
+            <FontString name="$parentValueText9" wordwrap="true" font="Fonts\ARIALN.TTF" inherits="GameFontNormal" text="">
+                 <Anchors>
+                    <Anchor point="TOPRIGHT" relativeTo="$parent">
+                        <Offset>
+                            <AbsDimension x="-5" y="-85"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <FontHeight>
+                   <AbsValue val="9"/>
+                </FontHeight>
+            </FontString>
+            <FontString name="$parentText10" wordwrap="true" font="Fonts\ARIALN.TTF" inherits="GameFontNormal" text="">
+                 <Anchors>
+                    <Anchor point="TOPLEFT" relativeTo="$parent">
+                        <Offset>
+                            <AbsDimension x="5" y="-95"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <FontHeight>
+                   <AbsValue val="9"/>
+                </FontHeight>
+            </FontString>
+            <FontString name="$parentValueText10" wordwrap="true" font="Fonts\ARIALN.TTF" inherits="GameFontNormal" text="">
+                 <Anchors>
+                    <Anchor point="TOPRIGHT" relativeTo="$parent">
+                        <Offset>
+                            <AbsDimension x="-5" y="-95"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <FontHeight>
+                   <AbsValue val="9"/>
+                </FontHeight>
+            </FontString>
+            <FontString name="$parentText11" wordwrap="true" font="Fonts\ARIALN.TTF" inherits="GameFontNormal" text="">
+                 <Anchors>
+                    <Anchor point="TOPLEFT" relativeTo="$parent">
+                        <Offset>
+                            <AbsDimension x="5" y="-105"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <FontHeight>
+                   <AbsValue val="9"/>
+                </FontHeight>
+            </FontString>
+            <FontString name="$parentValueText11" wordwrap="true" font="Fonts\ARIALN.TTF" inherits="GameFontNormal" text="">
+                 <Anchors>
+                    <Anchor point="TOPRIGHT" relativeTo="$parent">
+                        <Offset>
+                            <AbsDimension x="-5" y="-105"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <FontHeight>
+                   <AbsValue val="9"/>
+                </FontHeight>
+            </FontString>
+        </Layer>
+    </Layers>
+    <Frames>
+
+    </Frames>
+    <Scripts>
+       <OnLoad>
+            self:SetScript("OnMouseUp", function(self, button, down)
+                if(button == "RightButton") then
+                    setStatMonitorStats();
+                    MageNugSP_RightClickFrame:Show();
+                end
+            end)
+            self:RegisterForDrag("LeftButton");
+            self.TimeSinceLastUpdate = 0;
+       </OnLoad>
+       <OnDragStart> MNStatMonitorLockFrames(self);</OnDragStart>
+	   <OnDragStop>
+            self:StopMovingOrSizing();
+            self.isMoving = false;
+            MageNuggetsClassicStatMonitor.statmon_point, _, MageNuggetsClassicStatMonitor.statmon_relativePoint, MageNuggetsClassicStatMonitor.statmon_xOfs, MageNuggetsClassicStatMonitor.statmon_yOfs = MageNugSP_Frame:GetPoint();
+       </OnDragStop>
+       <OnLeave>
+        GameTooltip:Hide()
+       </OnLeave>
+        <OnUpdate>
+            MageNuggetsClassicSP_OnUpdate(self, elapsed);
+          --  MageNuggetsClassicBuff_OnUpdate(self, elapsed);
+        </OnUpdate>
+    </Scripts>
+</Frame>
+
+<Frame name="MageNugSP_RightClickFrame" parent="MageNugSP_Frame" hidden="true" enableMouse="true" movable="false">
+        <Size x="290" y="325" />
+        <Anchors>
+            <Anchor point="TOPRIGHT" relativeTo="$parent">
+                <Offset>
+                    <AbsDimension x="290" y="5" />
+                </Offset>
+
+            </Anchor>
+        </Anchors>
+        <Layers>
+            <Layer level="ARTWORK">
+                <FontString name="$parentText" font="Fonts\FRIZQT__.TTF" inherits="GameFontNormal" text="Mage Nuggets Classic Stat Monitor">
+                    <Anchors>
+                        <Anchor point="TOP" relativeTo="$parent">
+                            <Offset>
+                                <AbsDimension x="0" y="20"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                    <FontHeight>
+                    <AbsValue val="16"/>
+                    </FontHeight>
+                    <color r="1" g="1" b="1"/>
+                </FontString>
+                <FontString name="$parent_ColorsText" inherits="GameFontNormal" text="Colors">
+                    <Anchors>
+                        <Anchor point="TOPLEFT" relativeTo="$parent">
+                            <Offset>
+                                <AbsDimension x="123" y="-17"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                     <FontHeight>
+                    <AbsValue val="8"/>
+                    </FontHeight>
+                </FontString>
+                <FontString name="$parent_SpellPowerText" inherits="GameFontNormal" text="Spell Power">
+                    <Anchors>
+                        <Anchor point="TOPLEFT" relativeTo="$parent">
+                            <Offset>
+                                <AbsDimension x="30" y="-40"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+                <FontString name="$parent_AttackPowerText" inherits="GameFontNormal" text="Attack Power">
+                    <Anchors>
+                        <Anchor point="TOPLEFT" relativeTo="$parent">
+                            <Offset>
+                                <AbsDimension x="30" y="-65"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+                <FontString name="$parent_CritText" inherits="GameFontNormal" text="Crit">
+                    <Anchors>
+                        <Anchor point="TOPLEFT" relativeTo="$parent">
+                            <Offset>
+                                <AbsDimension x="30" y="-90"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+                <FontString name="$parent_HasteText" inherits="GameFontNormal" text="Haste">
+                    <Anchors>
+                        <Anchor point="TOPLEFT" relativeTo="$parent">
+                            <Offset>
+                                <AbsDimension x="30" y="-115"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+                <FontString name="$parent_MasteryText" inherits="GameFontNormal" text="Mastery">
+                    <Anchors>
+                        <Anchor point="TOPLEFT" relativeTo="$parent">
+                            <Offset>
+                                <AbsDimension x="30" y="-140"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+                <FontString name="$parent_LeechText" inherits="GameFontNormal" text="Leech">
+                    <Anchors>
+                        <Anchor point="TOPLEFT" relativeTo="$parent">
+                            <Offset>
+                                <AbsDimension x="30" y="-165"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+                <FontString name="$parent_VersatilityText" inherits="GameFontNormal" text="Versatility">
+                    <Anchors>
+                        <Anchor point="TOPLEFT" relativeTo="$parent">
+                            <Offset>
+                                <AbsDimension x="30" y="-190"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+                <FontString name="$parent_SpiritText" inherits="GameFontNormal" text="Spirit">
+                    <Anchors>
+                        <Anchor point="TOPLEFT" relativeTo="$parent">
+                            <Offset>
+                                <AbsDimension x="30" y="-215"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+                <FontString name="$parent_RegenText" inherits="GameFontNormal" text="Mana Regen">
+                    <Anchors>
+                        <Anchor point="TOPLEFT" relativeTo="$parent">
+                            <Offset>
+                                <AbsDimension x="30" y="-240"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+                <FontString name="$parent_ArmorText" inherits="GameFontNormal" text="Armor">
+                    <Anchors>
+                        <Anchor point="TOPLEFT" relativeTo="$parent">
+                            <Offset>
+                                <AbsDimension x="30" y="-266"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+            </Layer>
+        </Layers>
+        <Frames>
+            <Button name="$parentButton1" inherits="UIPanelButtonTemplate" text="x">
+                <Size>
+                    <AbsDimension x="24" y="24"/>
+                </Size>
+                <Anchors>
+                    <Anchor point="TOPRIGHT">
+                        <Offset>
+                        <AbsDimension x="-3" y="-3"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Scripts>
+                    <OnClick>
+                        MageNugSP_RightClickFrame:Hide();
+                    </OnClick>
+                </Scripts>
+            </Button>
+            <CheckButton name="MageNugSP_SpellPowerCheckButton" frameStrata="MEDIUM"  inherits="InterfaceOptionsCheckButtonTemplate">
+               <Anchors>
+                   <Anchor point="TOPLEFT">
+                       <Offset>
+                            <AbsDimension x="5" y="-35" />
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+               <Scripts>
+                    <OnLoad>
+
+                    </OnLoad>
+                    <OnEnter>MageNugSP_RightClickFrame:Show();</OnEnter>
+                    <OnClick>MageNuggetsClassicStatMonitorToggle("spellpower");</OnClick>
+                </Scripts>
+            </CheckButton>
+            <Button name="MageNugSP_SpellPowerColorButton" frameStrata="HIGH" inherits="UIPanelButtonTemplate" text="a">
+                <Size>
+                <AbsDimension x="20" y="20"/>
+                </Size>
+                <Anchors>
+                    <Anchor point="TOPLEFT">
+                        <Offset>
+                        <AbsDimension x="120" y="-34"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Scripts>
+                    <OnClick>
+                        setCurrentStatColor(1);
+                        MageNugSP_ColorPickerFrame_ColorPickerText:SetText("Spell Power Text");
+                        MageNugSP_ColorPickerFrame:Show();
+                    </OnClick>
+                </Scripts>
+            </Button>
+            <Button name="MageNugSP_SpellPowerValueColorButton" frameStrata="HIGH" inherits="UIPanelButtonTemplate" text="1">
+                <Size>
+                <AbsDimension x="20" y="20"/>
+                </Size>
+                <Anchors>
+                    <Anchor point="TOPLEFT">
+                        <Offset>
+                        <AbsDimension x="145" y="-34"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Scripts>
+                    <OnClick>
+                        setCurrentStatColor(2);
+                        MageNugSP_ColorPickerFrame_ColorPickerText:SetText("Spell Power Value");
+                        MageNugSP_ColorPickerFrame:Show();
+                    </OnClick>
+                </Scripts>
+            </Button>
+            <CheckButton name="MageNugSP_AttackPowerCheckButton" frameStrata="MEDIUM" inherits="InterfaceOptionsCheckButtonTemplate">
+               <Anchors>
+                   <Anchor point="TOPLEFT">
+                       <Offset>
+                            <AbsDimension x="5" y="-60" />
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+               <Scripts>
+                    <OnEnter>MageNugSP_RightClickFrame:Show();</OnEnter>
+                    <OnClick>MageNuggetsClassicStatMonitorToggle("attackpower");</OnClick>
+                </Scripts>
+            </CheckButton>
+            <Button name="MageNugSP_AttackPowerColorButton" frameStrata="HIGH" inherits="UIPanelButtonTemplate" text="a">
+                <Size>
+                <AbsDimension x="20" y="20"/>
+                </Size>
+                <Anchors>
+                    <Anchor point="TOPLEFT">
+                        <Offset>
+                        <AbsDimension x="120" y="-60"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Scripts>
+                    <OnClick>
+                        setCurrentStatColor(3);
+                        MageNugSP_ColorPickerFrame_ColorPickerText:SetText("Attack Power Text");
+                        MageNugSP_ColorPickerFrame:Show();
+                    </OnClick>
+                </Scripts>
+            </Button>
+            <Button name="MageNugSP_AttackPowerValueColorButton" frameStrata="HIGH" inherits="UIPanelButtonTemplate" text="1">
+                <Size>
+                <AbsDimension x="20" y="20"/>
+                </Size>
+                <Anchors>
+                    <Anchor point="TOPLEFT">
+                        <Offset>
+                        <AbsDimension x="145" y="-60"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Scripts>
+                    <OnClick>
+                        setCurrentStatColor(4);
+                        MageNugSP_ColorPickerFrame_ColorPickerText:SetText("Attack Power Value");
+                        MageNugSP_ColorPickerFrame:Show();
+                    </OnClick>
+                </Scripts>
+            </Button>
+            <CheckButton name="MageNugSP_CritCheckButton" frameStrata="MEDIUM" inherits="InterfaceOptionsCheckButtonTemplate">
+               <Anchors>
+                   <Anchor point="TOPLEFT">
+                       <Offset>
+                            <AbsDimension x="5" y="-85" />
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+               <Scripts>
+                    <OnEnter>MageNugSP_RightClickFrame:Show();</OnEnter>
+                    <OnClick>MageNuggetsClassicStatMonitorToggle("crit");</OnClick>
+                </Scripts>
+            </CheckButton>
+            <Button name="MageNugSP_CritColorButton" frameStrata="HIGH" inherits="UIPanelButtonTemplate" text="a">
+                <Size>
+                <AbsDimension x="20" y="20"/>
+                </Size>
+                <Anchors>
+                    <Anchor point="TOPLEFT">
+                        <Offset>
+                        <AbsDimension x="120" y="-85"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Scripts>
+                    <OnClick>
+                        setCurrentStatColor(5);
+                        MageNugSP_ColorPickerFrame_ColorPickerText:SetText("Critical Text");
+                        MageNugSP_ColorPickerFrame:Show();
+                    </OnClick>
+                </Scripts>
+            </Button>
+            <Button name="MageNugSP_CritValueColorButton" frameStrata="HIGH" inherits="UIPanelButtonTemplate" text="1">
+                <Size>
+                <AbsDimension x="20" y="20"/>
+                </Size>
+                <Anchors>
+                    <Anchor point="TOPLEFT">
+                        <Offset>
+                        <AbsDimension x="145" y="-85"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Scripts>
+                    <OnClick>
+                        setCurrentStatColor(6);
+                        MageNugSP_ColorPickerFrame_ColorPickerText:SetText("Critical Value");
+                        MageNugSP_ColorPickerFrame:Show();
+                    </OnClick>
+                </Scripts>
+            </Button>
+            <CheckButton name="MageNugSP_HasteCheckButton" frameStrata="MEDIUM" inherits="InterfaceOptionsCheckButtonTemplate">
+               <Anchors>
+                   <Anchor point="TOPLEFT">
+                       <Offset>
+                            <AbsDimension x="5" y="-110" />
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+               <Scripts>
+                    <OnEnter>MageNugSP_RightClickFrame:Show();</OnEnter>
+                    <OnClick>MageNuggetsClassicStatMonitorToggle("haste");</OnClick>
+                </Scripts>
+            </CheckButton>
+            <Button name="MageNugSP_HasteColorButton" frameStrata="HIGH" inherits="UIPanelButtonTemplate" text="a">
+                <Size>
+                <AbsDimension x="20" y="20"/>
+                </Size>
+                <Anchors>
+                    <Anchor point="TOPLEFT">
+                        <Offset>
+                        <AbsDimension x="120" y="-110"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Scripts>
+                    <OnClick>
+                        setCurrentStatColor(7);
+                        MageNugSP_ColorPickerFrame_ColorPickerText:SetText("Haste Text");
+                        MageNugSP_ColorPickerFrame:Show();
+                    </OnClick>
+                </Scripts>
+            </Button>
+            <Button name="MageNugSP_HasteValueColorButton" frameStrata="HIGH" inherits="UIPanelButtonTemplate" text="1">
+                <Size>
+                <AbsDimension x="20" y="20"/>
+                </Size>
+                <Anchors>
+                    <Anchor point="TOPLEFT">
+                        <Offset>
+                        <AbsDimension x="145" y="-110"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Scripts>
+                    <OnClick>
+                        setCurrentStatColor(8);
+                        MageNugSP_ColorPickerFrame_ColorPickerText:SetText("Haste Value");
+                        MageNugSP_ColorPickerFrame:Show();
+                    </OnClick>
+                </Scripts>
+            </Button>
+            <CheckButton name="MageNugSP_MasteryCheckButton" inherits="InterfaceOptionsCheckButtonTemplate">
+               <Anchors>
+                   <Anchor point="TOPLEFT">
+                       <Offset>
+                            <AbsDimension x="5" y="-135" />
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+               <Scripts>
+                    <OnEnter>MageNugSP_RightClickFrame:Show();</OnEnter>
+                    <OnClick>MageNuggetsClassicStatMonitorToggle("mastery");</OnClick>
+                </Scripts>
+            </CheckButton>
+            <Button name="MageNugSP_MasteryColorButton" frameStrata="HIGH" inherits="UIPanelButtonTemplate" text="a">
+                <Size>
+                <AbsDimension x="20" y="20"/>
+                </Size>
+                <Anchors>
+                    <Anchor point="TOPLEFT">
+                        <Offset>
+                        <AbsDimension x="120" y="-135"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Scripts>
+                    <OnClick>
+                        setCurrentStatColor(9);
+                        MageNugSP_ColorPickerFrame_ColorPickerText:SetText("Mastery Text");
+                        MageNugSP_ColorPickerFrame:Show();
+                    </OnClick>
+                </Scripts>
+            </Button>
+            <Button name="MageNugSP_MasteryValueColorButton" frameStrata="HIGH" inherits="UIPanelButtonTemplate" text="1">
+                <Size>
+                <AbsDimension x="20" y="20"/>
+                </Size>
+                <Anchors>
+                    <Anchor point="TOPLEFT">
+                        <Offset>
+                        <AbsDimension x="145" y="-135"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Scripts>
+                    <OnClick>
+                        setCurrentStatColor(10);
+                        MageNugSP_ColorPickerFrame_ColorPickerText:SetText("Mastery Value");
+                        MageNugSP_ColorPickerFrame:Show();
+                    </OnClick>
+                </Scripts>
+            </Button>
+            <CheckButton name="MageNugSP_LeechCheckButton" inherits="InterfaceOptionsCheckButtonTemplate">
+               <Anchors>
+                   <Anchor point="TOPLEFT">
+                       <Offset>
+                            <AbsDimension x="5" y="-160" />
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+               <Scripts>
+                    <OnEnter>MageNugSP_RightClickFrame:Show();</OnEnter>
+                    <OnClick>MageNuggetsClassicStatMonitorToggle("leech");</OnClick>
+                </Scripts>
+            </CheckButton>
+            <Button name="MageNugSP_LeechColorButton" frameStrata="HIGH" inherits="UIPanelButtonTemplate" text="a">
+                <Size>
+                <AbsDimension x="20" y="20"/>
+                </Size>
+                <Anchors>
+                    <Anchor point="TOPLEFT">
+                        <Offset>
+                        <AbsDimension x="120" y="-160"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Scripts>
+                    <OnClick>
+                        setCurrentStatColor(13);
+                        MageNugSP_ColorPickerFrame_ColorPickerText:SetText("Leech Text");
+                        MageNugSP_ColorPickerFrame:Show();
+                    </OnClick>
+                </Scripts>
+            </Button>
+            <Button name="MageNugSP_LeechValueColorButton" frameStrata="HIGH" inherits="UIPanelButtonTemplate" text="1">
+                <Size>
+                <AbsDimension x="20" y="20"/>
+                </Size>
+                <Anchors>
+                    <Anchor point="TOPLEFT">
+                        <Offset>
+                        <AbsDimension x="145" y="-160"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Scripts>
+                    <OnClick>
+                        setCurrentStatColor(14);
+                        MageNugSP_ColorPickerFrame_ColorPickerText:SetText("Leech Value");
+                        MageNugSP_ColorPickerFrame:Show();
+                    </OnClick>
+                </Scripts>
+            </Button>
+            <CheckButton name="MageNugSP_VersatilityCheckButton" inherits="InterfaceOptionsCheckButtonTemplate">
+               <Anchors>
+                   <Anchor point="TOPLEFT">
+                       <Offset>
+                            <AbsDimension x="5" y="-185" />
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+               <Scripts>
+                    <OnEnter>MageNugSP_RightClickFrame:Show();</OnEnter>
+                    <OnClick>MageNuggetsClassicStatMonitorToggle("versatility");</OnClick>
+                </Scripts>
+            </CheckButton>
+            <Button name="MageNugSP_VersatilityColorButton" frameStrata="HIGH" inherits="UIPanelButtonTemplate" text="a">
+                <Size>
+                <AbsDimension x="20" y="20"/>
+                </Size>
+                <Anchors>
+                    <Anchor point="TOPLEFT">
+                        <Offset>
+                        <AbsDimension x="120" y="-185"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Scripts>
+                    <OnClick>
+                        setCurrentStatColor(15);
+                        MageNugSP_ColorPickerFrame_ColorPickerText:SetText("Versatility Text");
+                        MageNugSP_ColorPickerFrame:Show();
+                    </OnClick>
+                </Scripts>
+            </Button>
+            <Button name="MageNugSP_VersatilityValueColorButton" frameStrata="HIGH" inherits="UIPanelButtonTemplate" text="1">
+                <Size>
+                <AbsDimension x="20" y="20"/>
+                </Size>
+                <Anchors>
+                    <Anchor point="TOPLEFT">
+                        <Offset>
+                        <AbsDimension x="145" y="-185"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Scripts>
+                    <OnClick>
+                        setCurrentStatColor(16);
+                        MageNugSP_ColorPickerFrame_ColorPickerText:SetText("Versatility Value");
+                        MageNugSP_ColorPickerFrame:Show();
+                    </OnClick>
+                </Scripts>
+            </Button>
+            <CheckButton name="MageNugSP_SpiritCheckButton" inherits="InterfaceOptionsCheckButtonTemplate">
+               <Anchors>
+                   <Anchor point="TOPLEFT">
+                       <Offset>
+                            <AbsDimension x="5" y="-210" />
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+               <Scripts>
+                    <OnEnter>MageNugSP_RightClickFrame:Show();</OnEnter>
+                    <OnClick>MageNuggetsClassicStatMonitorToggle("spirit");</OnClick>
+                </Scripts>
+            </CheckButton>
+            <Button name="MageNugSP_SpiritColorButton" frameStrata="HIGH" inherits="UIPanelButtonTemplate" text="a">
+                <Size>
+                <AbsDimension x="20" y="20"/>
+                </Size>
+                <Anchors>
+                    <Anchor point="TOPLEFT">
+                        <Offset>
+                        <AbsDimension x="120" y="-210"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Scripts>
+                    <OnClick>
+                        setCurrentStatColor(17);
+                        MageNugSP_ColorPickerFrame_ColorPickerText:SetText("Spirit Text");
+                        MageNugSP_ColorPickerFrame:Show();
+                    </OnClick>
+                </Scripts>
+            </Button>
+            <Button name="MageNugSP_SpiritValueColorButton" frameStrata="HIGH" inherits="UIPanelButtonTemplate" text="1">
+                <Size>
+                <AbsDimension x="20" y="20"/>
+                </Size>
+                <Anchors>
+                    <Anchor point="TOPLEFT">
+                        <Offset>
+                        <AbsDimension x="145" y="-210"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Scripts>
+                    <OnClick>
+                        setCurrentStatColor(18);
+                        MageNugSP_ColorPickerFrame_ColorPickerText:SetText("Spirit Value");
+                        MageNugSP_ColorPickerFrame:Show();
+                    </OnClick>
+                </Scripts>
+            </Button>
+            <CheckButton name="MageNugSP_ManaRegenCheckButton" inherits="InterfaceOptionsCheckButtonTemplate">
+               <Anchors>
+                   <Anchor point="TOPLEFT">
+                       <Offset>
+                            <AbsDimension x="5" y="-235" />
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+               <Scripts>
+                    <OnEnter>MageNugSP_RightClickFrame:Show();</OnEnter>
+                    <OnClick>MageNuggetsClassicStatMonitorToggle("manaregen");</OnClick>
+                </Scripts>
+            </CheckButton>
+            <Button name="MageNugSP_RegenColorButton" frameStrata="HIGH" inherits="UIPanelButtonTemplate" text="a">
+                <Size>
+                <AbsDimension x="20" y="20"/>
+                </Size>
+                <Anchors>
+                    <Anchor point="TOPLEFT">
+                        <Offset>
+                        <AbsDimension x="120" y="-235"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Scripts>
+                    <OnClick>
+                        setCurrentStatColor(19);
+                        MageNugSP_ColorPickerFrame_ColorPickerText:SetText("Mana Regen Text");
+                        MageNugSP_ColorPickerFrame:Show();
+                    </OnClick>
+                </Scripts>
+            </Button>
+            <Button name="MageNugSP_RegenValueColorButton" frameStrata="HIGH" inherits="UIPanelButtonTemplate" text="1">
+                <Size>
+                <AbsDimension x="20" y="20"/>
+                </Size>
+                <Anchors>
+                    <Anchor point="TOPLEFT">
+                        <Offset>
+                        <AbsDimension x="145" y="-235"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Scripts>
+                    <OnClick>
+                        setCurrentStatColor(20);
+                        MageNugSP_ColorPickerFrame_ColorPickerText:SetText("Mana Regen Value");
+                        MageNugSP_ColorPickerFrame:Show();
+                    </OnClick>
+                </Scripts>
+            </Button>
+
+            <CheckButton name="MageNugSP_ArmorCheckButton" inherits="InterfaceOptionsCheckButtonTemplate">
+               <Anchors>
+                   <Anchor point="TOPLEFT">
+                       <Offset>
+                            <AbsDimension x="5" y="-260" />
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+               <Scripts>
+                    <OnEnter>MageNugSP_RightClickFrame:Show();</OnEnter>
+                    <OnClick>MageNuggetsClassicStatMonitorToggle("armor");</OnClick>
+                </Scripts>
+            </CheckButton>
+            <Button name="MageNugSP_ArmorColorButton" frameStrata="HIGH" inherits="UIPanelButtonTemplate" text="a">
+                <Size>
+                <AbsDimension x="20" y="20"/>
+                </Size>
+                <Anchors>
+                    <Anchor point="TOPLEFT">
+                        <Offset>
+                        <AbsDimension x="120" y="-260"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Scripts>
+                    <OnClick>
+                        setCurrentStatColor(21);
+                        MageNugSP_ColorPickerFrame_ColorPickerText:SetText("Armor Text");
+                        MageNugSP_ColorPickerFrame:Show();
+                    </OnClick>
+                </Scripts>
+            </Button>
+            <Button name="MageNugSP_ArmorValueColorButton" frameStrata="HIGH" inherits="UIPanelButtonTemplate" text="1">
+                <Size>
+                <AbsDimension x="20" y="20"/>
+                </Size>
+                <Anchors>
+                    <Anchor point="TOPLEFT">
+                        <Offset>
+                        <AbsDimension x="145" y="-260"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Scripts>
+                    <OnClick>
+                        setCurrentStatColor(22);
+                        MageNugSP_ColorPickerFrame_ColorPickerText:SetText("Armor Value");
+                        MageNugSP_ColorPickerFrame:Show();
+                    </OnClick>
+                </Scripts>
+            </Button>
+
+        </Frames>
+        <Scripts>
+        <OnLoad>self:SetScale(0.5);</OnLoad>
+        <OnDragStart> MNStatMonitorLockFrames(self);</OnDragStart>
+        </Scripts>
+    </Frame>
+
+
+<Frame name="MageNugSP_ColorPickerFrame" parent="MageNugSP_RightClickFrame" hidden="true" enableMouse="true" movable="false">
+    <Size x="190" y="215" />
+    <Anchors>
+        <Anchor point="TOPRIGHT" relativeTo="$parent">
+            <Offset>
+                <AbsDimension x="190" y="0" />
+            </Offset>
+
+        </Anchor>
+    </Anchors>
+    <Layers>
+        <Layer level="ARTWORK">
+            <FontString name="$parent_ColorPickerText" font="Fonts\FRIZQT__.TTF" inherits="GameFontNormal" text="Color Picker">
+                <Anchors>
+                    <Anchor point="TOP" relativeTo="$parent">
+                        <Offset>
+                            <AbsDimension x="-10" y="-10"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <FontHeight>
+                    <AbsValue val="10"/>
+                </FontHeight>
+                <color r="1" g="1" b="1"/>
+            </FontString>
+        </Layer>
+    </Layers>
+    <Frames>
+         <Button name="$parentButton1" inherits="UIPanelButtonTemplate" text="x">
+                <Size>
+                    <AbsDimension x="24" y="24"/>
+                </Size>
+                <Anchors>
+                    <Anchor point="TOPRIGHT">
+                        <Offset>
+                        <AbsDimension x="-3" y="-3"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Scripts>
+                    <OnClick>
+                        MageNugSP_ColorPickerFrame:Hide();
+                    </OnClick>
+                </Scripts>
+            </Button>
+        <ColorSelect name="$parentColorSelect" enableMouse="true">
+	        <Size>
+		        <AbsDimension x="170" y="170"></AbsDimension>
+	        </Size>
+	        <Anchors>
+		        <Anchor point="TOPLEFT">
+				    <Offset>
+					    <AbsDimension x="10" y="-30"></AbsDimension>
+				    </Offset>
+		        </Anchor>
+	        </Anchors>
+	        <Scripts>
+                <OnColorSelect>
+                    statMonitorColorSelect();
+                </OnColorSelect>
+            </Scripts>
+            <ColorWheelTexture>
+            </ColorWheelTexture>
+        </ColorSelect>
+    </Frames>
+    <Scripts>
+    <OnLoad>
+    --self:SetScale(0.7);
+    </OnLoad>
+    <OnDragStart> MNStatMonitorLockFrames(self);</OnDragStart>
+    </Scripts>
+</Frame>
+</Ui>
