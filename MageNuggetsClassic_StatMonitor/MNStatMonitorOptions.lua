@@ -6,7 +6,7 @@
     crit = true;
     haste = true;
     mastery = true;
-    leech = true;
+    hit = true;
     versatility = true;
     spirit = true;
     manaregen = true;
@@ -47,12 +47,12 @@
     versatilityValueR = 1;
     versatilityValueG = 1;
     versatilityValueB = 1;
-    leechR = 1;
-    leechG = 1;
-    leechB = 1;
-    leechValueR = 1;
-    leechValueG = 1;
-    leechValueB = 1;
+    hitR = 1;
+    hitG = 1;
+    hitB = 1;
+    hitValueR = 1;
+    hitValueG = 1;
+    hitValueB = 1;
     spiritR = 1;
     spiritG = 1;
     spiritB = 1;
@@ -391,23 +391,23 @@ function loadStatMonitorColors()
     if(MageNuggetsClassicStatMonitor.masteryValueB == nil)then
         MageNuggetsClassicStatMonitor.masteryValueB = 1;
     end
-    if(MageNuggetsClassicStatMonitor.leechR == nil)then
-        MageNuggetsClassicStatMonitor.leechR = 1;
+    if(MageNuggetsClassicStatMonitor.hitR == nil)then
+        MageNuggetsClassicStatMonitor.hitR = 1;
     end
-    if(MageNuggetsClassicStatMonitor.leechG == nil)then
-        MageNuggetsClassicStatMonitor.leechG = 1;
+    if(MageNuggetsClassicStatMonitor.hitG == nil)then
+        MageNuggetsClassicStatMonitor.hitG = 1;
     end
-    if(MageNuggetsClassicStatMonitor.leechB == nil)then
-        MageNuggetsClassicStatMonitor.leechB = 1;
+    if(MageNuggetsClassicStatMonitor.hitB == nil)then
+        MageNuggetsClassicStatMonitor.hitB = 1;
     end
-    if(MageNuggetsClassicStatMonitor.leechValueR == nil)then
-        MageNuggetsClassicStatMonitor.leechValueR = 1;
+    if(MageNuggetsClassicStatMonitor.hitValueR == nil)then
+        MageNuggetsClassicStatMonitor.hitValueR = 1;
     end
-    if(MageNuggetsClassicStatMonitor.leechValueG == nil)then
-        MageNuggetsClassicStatMonitor.leechValueG = 1;
+    if(MageNuggetsClassicStatMonitor.hitValueG == nil)then
+        MageNuggetsClassicStatMonitor.hitValueG = 1;
     end
-    if(MageNuggetsClassicStatMonitor.leechValueB == nil)then
-        MageNuggetsClassicStatMonitor.leechValueB = 1;
+    if(MageNuggetsClassicStatMonitor.hitValueB == nil)then
+        MageNuggetsClassicStatMonitor.hitValueB = 1;
     end
     if(MageNuggetsClassicStatMonitor.versatilityR == nil)then
         MageNuggetsClassicStatMonitor.versatilityR = 1;
@@ -510,9 +510,9 @@ function statMonitorColorSelect()
     elseif(currentStatColor == 10) then
        MageNuggetsClassicStatMonitor.masteryValueR, MageNuggetsClassicStatMonitor.masteryValueG, MageNuggetsClassicStatMonitor.masteryValueB = MageNugSP_ColorPickerFrameColorSelect:GetColorRGB();
     elseif(currentStatColor == 13) then
-        MageNuggetsClassicStatMonitor.leechR, MageNuggetsClassicStatMonitor.leechG, MageNuggetsClassicStatMonitor.leechB = MageNugSP_ColorPickerFrameColorSelect:GetColorRGB();
+        MageNuggetsClassicStatMonitor.hitR, MageNuggetsClassicStatMonitor.hitG, MageNuggetsClassicStatMonitor.hitB = MageNugSP_ColorPickerFrameColorSelect:GetColorRGB();
     elseif(currentStatColor == 14) then
-        MageNuggetsClassicStatMonitor.leechValueR, MageNuggetsClassicStatMonitor.leechValueG, MageNuggetsClassicStatMonitor.leechValueB = MageNugSP_ColorPickerFrameColorSelect:GetColorRGB();
+        MageNuggetsClassicStatMonitor.hitValueR, MageNuggetsClassicStatMonitor.hitValueG, MageNuggetsClassicStatMonitor.hitValueB = MageNugSP_ColorPickerFrameColorSelect:GetColorRGB();
     elseif(currentStatColor == 15) then
         MageNuggetsClassicStatMonitor.versatilityR, MageNuggetsClassicStatMonitor.versatilityG, MageNuggetsClassicStatMonitor.versatilityB = MageNugSP_ColorPickerFrameColorSelect:GetColorRGB();
     elseif(currentStatColor == 16) then

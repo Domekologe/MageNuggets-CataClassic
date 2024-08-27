@@ -13,8 +13,8 @@ function MageNuggetsClassicSP_OnUpdate(self, elapsed)
     local attackpower, posBuff, negBuff = UnitAttackPower("player");
     local crit = roundStat(GetSpellCritChance(3));
     local haste = roundStat(UnitSpellHaste("player"));
-    --local mastery = roundStat(GetMasteryEffect());
-    --local leech = roundStat(GetLifesteal());
+    local mastery = roundStat(GetMastery());
+    local hit = roundStat(GetCombatRatingBonus(CR_HIT_SPELL) + GetSpellHitModifier());
     local versatility = roundStat(GetCombatRatingBonus(29));
     local base, stat, posBuff, negBuff = UnitStat("player",3);
     local spirit = stat;
@@ -62,19 +62,19 @@ function MageNuggetsClassicSP_OnUpdate(self, elapsed)
         readout[statCount] = "Haste";
         stats[statCount] = haste;
     end
-	--[[
+	
     if(MageNuggetsClassicStatMonitor.mastery == true)then
         statCount = statCount + 1;
         readout[statCount] = "Mastery";
         stats[statCount] = mastery;
     end
 	
-    if(MageNuggetsClassicStatMonitor.leech == true)then
+    if(MageNuggetsClassicStatMonitor.hit == true)then
         statCount = statCount + 1;
-        readout[statCount] = "Leech";
-        stats[statCount] = leech;
+        readout[statCount] = "Hit";
+        stats[statCount] = hit;
     end
-	]]--
+	
     if(MageNuggetsClassicStatMonitor.versatility == true)then
         statCount = statCount + 1;
         readout[statCount] = "Versatil";
@@ -195,19 +195,20 @@ function MageNuggetsClassicStatMonitorToggle(statType)
         else
             MageNuggetsClassicStatMonitor.haste = false;
         end
-    --[[elseif(statType == "mastery") then
+    elseif(statType == "mastery") then
         if (MageNuggetsClassicStatMonitor.mastery == false) then
             MageNuggetsClassicStatMonitor.mastery = true;
         else
             MageNuggetsClassicStatMonitor.mastery = false;
         end
 	
-    elseif(statType == "leech") then
-        if (MageNuggetsClassicStatMonitor.leech == false) then
-            MageNuggetsClassicStatMonitor.leech = true;
+    elseif(statType == "hit") then
+        if (MageNuggetsClassicStatMonitor.hit == false) then
+            MageNuggetsClassicStatMonitor.hit = true;
         else
-            MageNuggetsClassicStatMonitor.leech = false;
-        end]]--
+            MageNuggetsClassicStatMonitor.hit = false;
+        end
+		
     elseif(statType == "versatility") then
         if (MageNuggetsClassicStatMonitor.versatility == false) then
             MageNuggetsClassicStatMonitor.versatility = true;
@@ -282,7 +283,7 @@ function setStatMonitorStats()
         MageNugSP_HasteCheckButton:SetChecked(false);
     end
 
-    --[[if (MageNuggetsClassicStatMonitor.mastery == nil)then
+    if (MageNuggetsClassicStatMonitor.mastery == nil)then
         MageNuggetsClassicStatMonitor.mastery = true
     end
     if (MageNuggetsClassicStatMonitor.mastery == true) then
@@ -291,14 +292,14 @@ function setStatMonitorStats()
         MageNugSP_MasteryCheckButton:SetChecked(false);
     end
 
-    if (MageNuggetsClassicStatMonitor.leech == nil)then
-        MageNuggetsClassicStatMonitor.leech = true
+    if (MageNuggetsClassicStatMonitor.hit == nil)then
+        MageNuggetsClassicStatMonitor.hit = true
     end
-    if (MageNuggetsClassicStatMonitor.leech == true) then
-        MageNugSP_LeechCheckButton:SetChecked(true);
+    if (MageNuggetsClassicStatMonitor.hit == true) then
+        MageNugSP_HitCheckButton:SetChecked(true);
     else
-        MageNugSP_LeechCheckButton:SetChecked(false);
-    end]]--
+        MageNugSP_HitCheckButton:SetChecked(false);
+    end
 
     if (MageNuggetsClassicStatMonitor.versatility == nil)then
         MageNuggetsClassicStatMonitor.versatility = true
@@ -413,16 +414,16 @@ function dressStatMonitorText()
         _G["MageNugSP_FrameText"..statCount]:SetTextColor(MageNuggetsClassicStatMonitor.hasteR,MageNuggetsClassicStatMonitor.hasteG,MageNuggetsClassicStatMonitor.hasteB,1);
         _G["MageNugSP_FrameValueText"..statCount]:SetTextColor(MageNuggetsClassicStatMonitor.hasteValueR,MageNuggetsClassicStatMonitor.hasteValueG,MageNuggetsClassicStatMonitor.hasteValueB,1);
     end
-    --[[if(MageNuggetsClassicStatMonitor.mastery == true) then
+    if(MageNuggetsClassicStatMonitor.mastery == true) then
         statCount = statCount + 1;
         _G["MageNugSP_FrameText"..statCount]:SetTextColor(MageNuggetsClassicStatMonitor.masteryR,MageNuggetsClassicStatMonitor.masteryG,MageNuggetsClassicStatMonitor.masteryB,1);
         _G["MageNugSP_FrameValueText"..statCount]:SetTextColor(MageNuggetsClassicStatMonitor.masteryValueR,MageNuggetsClassicStatMonitor.masteryValueG,MageNuggetsClassicStatMonitor.masteryValueB,1);
     end
-    if(MageNuggetsClassicStatMonitor.leech == true) then
+    if(MageNuggetsClassicStatMonitor.hit == true) then
         statCount = statCount + 1;
-        _G["MageNugSP_FrameText"..statCount]:SetTextColor(MageNuggetsClassicStatMonitor.leechR,MageNuggetsClassicStatMonitor.leechG,MageNuggetsClassicStatMonitor.leechB,1);
-        _G["MageNugSP_FrameValueText"..statCount]:SetTextColor(MageNuggetsClassicStatMonitor.leechValueR,MageNuggetsClassicStatMonitor.leechValueG,MageNuggetsClassicStatMonitor.leechValueB,1);
-    end]]--
+        _G["MageNugSP_FrameText"..statCount]:SetTextColor(MageNuggetsClassicStatMonitor.hitR,MageNuggetsClassicStatMonitor.hitG,MageNuggetsClassicStatMonitor.hitB,1);
+        _G["MageNugSP_FrameValueText"..statCount]:SetTextColor(MageNuggetsClassicStatMonitor.hitValueR,MageNuggetsClassicStatMonitor.hitValueG,MageNuggetsClassicStatMonitor.hitValueB,1);
+    end
     if(MageNuggetsClassicStatMonitor.versatility == true) then
         statCount = statCount + 1;
         _G["MageNugSP_FrameText"..statCount]:SetTextColor(MageNuggetsClassicStatMonitor.versatilityR,MageNuggetsClassicStatMonitor.versatilityG,MageNuggetsClassicStatMonitor.versatilityB,1);

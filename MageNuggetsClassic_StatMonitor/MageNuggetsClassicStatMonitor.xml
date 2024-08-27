@@ -710,7 +710,7 @@
                     </OnClick>
                 </Scripts>
             </Button>
-            <CheckButton name="MageNugSP_LeechCheckButton" inherits="InterfaceOptionsCheckButtonTemplate">
+            <CheckButton name="MageNugSP_HitCheckButton" inherits="InterfaceOptionsCheckButtonTemplate">
                <Anchors>
                    <Anchor point="TOPLEFT">
                        <Offset>
@@ -720,10 +720,10 @@
                 </Anchors>
                <Scripts>
                     <OnEnter>MageNugSP_RightClickFrame:Show();</OnEnter>
-                    <OnClick>MageNuggetsClassicStatMonitorToggle("leech");</OnClick>
+                    <OnClick>MageNuggetsClassicStatMonitorToggle("hit");</OnClick>
                 </Scripts>
             </CheckButton>
-            <Button name="MageNugSP_LeechColorButton" frameStrata="HIGH" inherits="UIPanelButtonTemplate" text="a">
+            <Button name="MageNugSP_HitColorButton" frameStrata="HIGH" inherits="UIPanelButtonTemplate" text="a">
                 <Size>
                 <AbsDimension x="20" y="20"/>
                 </Size>
@@ -737,12 +737,12 @@
                 <Scripts>
                     <OnClick>
                         setCurrentStatColor(13);
-                        MageNugSP_ColorPickerFrame_ColorPickerText:SetText("Leech Text");
+                        MageNugSP_ColorPickerFrame_ColorPickerText:SetText("Hit Text");
                         MageNugSP_ColorPickerFrame:Show();
                     </OnClick>
                 </Scripts>
             </Button>
-            <Button name="MageNugSP_LeechValueColorButton" frameStrata="HIGH" inherits="UIPanelButtonTemplate" text="1">
+            <Button name="MageNugSP_HitValueColorButton" frameStrata="HIGH" inherits="UIPanelButtonTemplate" text="1">
                 <Size>
                 <AbsDimension x="20" y="20"/>
                 </Size>
@@ -756,7 +756,7 @@
                 <Scripts>
                     <OnClick>
                         setCurrentStatColor(14);
-                        MageNugSP_ColorPickerFrame_ColorPickerText:SetText("Leech Value");
+                        MageNugSP_ColorPickerFrame_ColorPickerText:SetText("Hit Value");
                         MageNugSP_ColorPickerFrame:Show();
                     </OnClick>
                 </Scripts>
