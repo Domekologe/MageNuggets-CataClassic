@@ -14,7 +14,7 @@ function MageNuggetsClassicSP_OnUpdate(self, elapsed)
     local crit = roundStat(GetSpellCritChance(3));
     local haste = roundStat(UnitSpellHaste("player"));
     local mastery = roundStat(GetMastery());
-    local hit = roundStat(GetCombatRatingBonus(CR_HIT_SPELL) + GetSpellHitModifier());
+    local hit = roundStat(GetCombatRatingBonus(CR_HIT_SPELL));
     local versatility = roundStat(GetCombatRatingBonus(29));
     local base, stat, posBuff, negBuff = UnitStat("player",3);
     local spirit = stat;
