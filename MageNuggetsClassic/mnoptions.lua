@@ -105,7 +105,9 @@ end
 
 function MageNuggetsClassic_SlashCommandHandler(msg)
     if (msg == "options") then
-	    InterfaceOptionsFrame_OpenToCategory("Mage Nuggets Classic");
+		local panel = CreateFrame("Frame")
+		panel.name = "Mage Nuggets Classic"               -- see panel fields
+	    InterfaceOptionsFrame_OpenToCategory(panel);
     elseif (msg == "ports") then
         MageNugz_Minimap_OnClick();
     else
@@ -115,49 +117,65 @@ function MageNuggetsClassic_SlashCommandHandler(msg)
     end
 end
 
+
 function loadMageNuggetsClassicOptionsFrames()
     local MageNugOptions = CreateFrame("FRAME", "MageNugOptions", InterfaceOptionsFrame)
-    MageNugOptions.name = "Mage Nuggets Classic"
-    InterfaceOptions_AddCategory(MageNugOptions)
+    MageNugOptions.name = "Mage Nuggets"
+    local mainCategory, mainLayout = Settings.RegisterCanvasLayoutCategory(MageNugOptions, MageNugOptions.name);
+    mainCategory.ID = MageNugOptions.name
+    Settings.RegisterAddOnCategory(mainCategory);
     MageNugOptions:SetPoint("TOPLEFT", InterfaceOptionsFrame, "BOTTOMRIGHT", 0, 0)
 
     local fireNuggetOptions = CreateFrame("FRAME", "fireNuggetOptions");
     fireNuggetOptions.name = "Fire Nugget";
-    fireNuggetOptions.parent = "Mage Nuggets Classic";
-    InterfaceOptions_AddCategory(fireNuggetOptions);
+    fireNuggetOptions.parent = mainCategory;
+    local fireNuggetCategory, fireMuggetLayout = Settings.RegisterCanvasLayoutSubcategory(mainCategory, fireNuggetOptions, fireNuggetOptions.name);
+    fireNuggetCategory.ID = fireNuggetOptions.name
+    Settings.RegisterAddOnCategory(fireNuggetCategory);
     fireNuggetOptions:SetPoint("TOPLEFT", InterfaceOptionsFrame, "BOTTOMRIGHT", 0, 0)
 
     local msgOptions = CreateFrame("FRAME", "msgOptions");
     msgOptions.name = "Messages";
-    msgOptions.parent = "Mage Nuggets Classic";
-    InterfaceOptions_AddCategory(msgOptions);
+    msgOptions.parent = "Mage Nuggets";
+    local msgCategory, msgLayout = Settings.RegisterCanvasLayoutSubcategory(mainCategory, msgOptions, msgOptions.name);
+    msgCategory.ID = msgOptions.name
+    Settings.RegisterAddOnCategory(msgCategory);
     msgOptions:SetPoint("TOPLEFT", InterfaceOptionsFrame, "BOTTOMRIGHT", 0, 0)
 
     local soundOptions = CreateFrame("FRAME", "soundOptions");
     soundOptions.name = "Sounds";
-    soundOptions.parent = "Mage Nuggets Classic";
-    InterfaceOptions_AddCategory(soundOptions);
+    soundOptions.parent = "Mage Nuggets";
+    local soundCategory, soundLayout = Settings.RegisterCanvasLayoutSubcategory(mainCategory, soundOptions, soundOptions.name);
+    soundCategory.ID = soundOptions.name
+    Settings.RegisterAddOnCategory(soundCategory);
     soundOptions:SetPoint("TOPLEFT", InterfaceOptionsFrame, "BOTTOMRIGHT", 0, 0)
 
     local priestOptions = CreateFrame("FRAME", "priestOptions");
     priestOptions.name = "Priest";
-    priestOptions.parent = "Mage Nuggets Classic";
-    InterfaceOptions_AddCategory(priestOptions);
+    priestOptions.parent = "Mage Nuggets";
+    local priestCategory, priestLayout = Settings.RegisterCanvasLayoutSubcategory(mainCategory, priestOptions, priestOptions.name);
+    priestCategory.ID = priestOptions.name
+    Settings.RegisterAddOnCategory(priestCategory);
     priestOptions:SetPoint("TOPLEFT", InterfaceOptionsFrame, "BOTTOMRIGHT", 0, 0)
 
     local moonkinOptions = CreateFrame("FRAME", "moonkinOptions");
     moonkinOptions.name = "Moonkin";
-    moonkinOptions.parent = "Mage Nuggets Classic";
-    InterfaceOptions_AddCategory(moonkinOptions);
+    moonkinOptions.parent = "Mage Nuggets";
+    local moonkinCategory, moonkinLayout = Settings.RegisterCanvasLayoutSubcategory(mainCategory, moonkinOptions, moonkinOptions.name);
+    moonkinCategory.ID = moonkinOptions.name
+    Settings.RegisterAddOnCategory(moonkinCategory);
     moonkinOptions:SetPoint("TOPLEFT", InterfaceOptionsFrame, "BOTTOMRIGHT", 0, 0)
 
     local mnOptions = CreateFrame("FRAME", "mnOptions");
     mnOptions.name = "Options";
-    mnOptions.parent = "Mage Nuggets Classic";
-    InterfaceOptions_AddCategory(mnOptions);
+    mnOptions.parent = "Mage Nuggets";
+    local mnCategory, mnLayout = Settings.RegisterCanvasLayoutSubcategory(mainCategory, mnOptions, mnOptions.name);
+    mnCategory.ID = mnOptions.name
+    Settings.RegisterAddOnCategory(mnCategory);
     mnOptions:SetPoint("TOPLEFT", InterfaceOptionsFrame, "BOTTOMRIGHT", 0, 0)
-
 end
+
+
 
 function loadMageNuggetOptionsVariables_OnLoadEvent()
     if(MageNuggetsClassic.bombMouseOverMacro == nil) then
